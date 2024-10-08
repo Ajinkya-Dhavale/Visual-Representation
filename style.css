@@ -1,80 +1,80 @@
-*{
+/* Global Resets */
+* {
     margin: 0px;
     padding: 0px;
 }
-body{
-    /* background-color: antiquewhite; */
-    /* background-color:  #e1e6ec; */
+
+body {
     background-color: rgb(247, 235, 220);
 }
+
+/* Card Styles */
 .card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.5s ease, box-shadow 0.3s ease;
+    overflow: hidden; /* Prevent overflow */
+    position: relative; /* Needed for positioning elements */
+    border: 1px solid #ddd; /* Add a border to the card */
+    border-radius: 5px; /* Rounded corners for card */
 }
+
+/* Title and Text Styles */
+.card-title {
+    background-color: #007bff; /* Background color for title */
+    color: white; /* Title text color */
+    padding: 10px; /* Padding for title */
+    border-radius: 5px 5px 0 0; /* Rounded corners on top */
+}
+
+/* Scrollable Content Styles */
+.card-body {
+    height: 150px; /* Set a fixed height for the body */
+    overflow: hidden; /* Hide overflow by default */
+}
+
+.card-content {
+    max-height: 500px; /* Set max height for the content area */
+    overflow: auto; /* Hide overflow by default */
+    transition: max-height 0.5s ease; /* Transition for smooth effect */
+    margin-top: 5px; /* Space between title and content */
+    padding: 10px; /* Padding for content */
+}
+
+/* Card Hover Effect */
 .card:hover {
-    transform: scale(1.03); 
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);  
+    transform: scale(1.05); /* Scale up on hover */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
 }
 
-/* Fibbonocci Series */
-.container {
-    margin-top: 50px;
-}
-.fibonacci-output {
-    font-size: 1.25rem;
-    background-color: white;
-    border-radius: 5px;
-    margin-top: 10px;
-    padding: 15px;
-    border: 1px solid rgb(211, 202, 202);
-}
-.fibonacci-step {
-    font-size: 1.5rem;
-    color: #007bff;
+/* Scrollable Content Animation on Hover */
+.card-body:hover .card-content {
+    animation: scroll 6s linear infinite; /* Apply scrolling animation */
+    max-height: 500px; /* Allow more height on hover for scrolling */
+    overflow-y: hidden; /* Prevent scroll bar from appearing */
 }
 
-/* Palimdrome */
-.output-box {
-    font-size: 1.25rem;
-    background-color:white;
-    border-radius: 5px;
-    margin-top: 10px;
-    padding: 15px;
-    border: 1px solid rgb(211, 202, 202);
-}
-.palindrome-step {
-    font-size: 1.5rem;
-    color: #007bff;
-}
-.final-result {
-    font-size: 1.75rem;
-    margin-top: 15px;
-}
-.is-palindrome {
-    color: #28a745;
-}
-.not-palindrome {
-    color: #dc3545;
+@keyframes scroll {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-100%);
+    }
 }
 
-/* Matrix Multiplication */
-.matrix-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-  }
+/* Button Styles */
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative; /* For positioning */
+    overflow: hidden; /* To hide overflow of ripple effect */
+}
 
-  .matrix input {
-    width: 50px;
-    height: 50px;
-    text-align: center;
-    font-size: 18px;
-    margin: 5px;
-  }
-  .result-matrix {
-    text-align: center;
-    padding: 15px;
-    border-radius: 8px;
-  }
-  .result-matrix input{
-    background-color: white;
-  }
+/* Button Hover Effect */
+.btn-primary:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px); /* Raise the button slightly on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+}
+
+/* Additional styles can go here */
