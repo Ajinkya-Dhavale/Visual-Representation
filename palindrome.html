@@ -37,29 +37,6 @@
       </div>
   </div>
 
-  <script>
-      function checkPalindrome() {
-          const inputValue = document.getElementById('inputValue').value;
-          const outputDiv = document.getElementById('output');
-          if (!inputValue) {
-              outputDiv.innerHTML = 'Please enter a valid string or number.';
-              return;
-          }
-
-          const reversedValue = inputValue.split('').reverse().join('');
-
-          outputDiv.innerHTML += `<p class="palindrome-step">Original: ${inputValue}</p>`;
-          
-          setTimeout(() => {
-              outputDiv.innerHTML += `<p class="palindrome-step">Reversed: ${reversedValue}</p>`;
-          }, 1000);
-
-          setTimeout(() => {
-              if (inputValue === reversedValue) {
-                  outputDiv.innerHTML += `<p class="final-result is-palindrome">It's a Palindrome!</p>`;
-              } else {
-                  outputDiv.innerHTML += `<p class="final-result not-palindrome">It's not a Palindrome.</p>`;
-              }
-          }, 2000);
-      }
-  </script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,3 +1,64 @@
+/* Navigation Bar Styles */
+.navbar {
+    background-color: #007bff;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar-brand {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: transform 0.2s ease;
+}
+
+.navbar-brand:hover {
+    transform: scale(1.05);
+}
+
+.nav-link {
+    color: white;
+    font-size: 1rem;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+    background-color: #0056b3;
+    color: white;
+    transition: background-color 0.2s ease;
+}
+
+.nav-link.active {
+    background-color: #ffffff;
+    color: #007bff;
+    font-weight: bold;
+}
+
+.navbar-toggler {
+    border-color: #fff;
+}
+
+.navbar-toggler-icon {
+    background-color: #fff;
+}
+
+/* Mobile View Adjustments */
+@media (max-width: 992px) {
+    .navbar-nav {
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .nav-link {
+        margin: 5px 0;
+        display: block;
+    }
+}
+
 /* Global Resets */
 * {
     margin: 0px;
@@ -11,45 +72,53 @@ body {
 /* Card Styles */
 .card {
     transition: transform 0.5s ease, box-shadow 0.3s ease;
-    overflow: hidden; /* Prevent overflow */
-    position: relative; /* Needed for positioning elements */
-    border: 1px solid #ddd; /* Add a border to the card */
-    border-radius: 5px; /* Rounded corners for card */
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #ddd;
+    border-radius: 5px;
 }
 
-/* Title and Text Styles */
 .card-title {
-    background-color: #007bff; /* Background color for title */
-    color: white; /* Title text color */
-    padding: 10px; /* Padding for title */
-    border-radius: 5px 5px 0 0; /* Rounded corners on top */
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border-radius: 5px 5px 0 0;
+    position: relative;
 }
 
-/* Scrollable Content Styles */
+/* Initially hide the icons */
+.card-title i {
+    opacity: 0;  /* Icons are invisible by default */
+    transition: opacity 0.3s ease; /* Smooth transition when icons appear */
+}
+
+/* When the card is hovered, show the icons */
+.card:hover .card-title i {
+    opacity: 1;  /* Icons become visible on hover */
+}
+
 .card-body {
-    height: 150px; /* Set a fixed height for the body */
-    overflow: hidden; /* Hide overflow by default */
+    height: 150px;
+    overflow: hidden;
 }
 
 .card-content {
-    max-height: 500px; /* Set max height for the content area */
-    overflow: auto; /* Hide overflow by default */
-    transition: max-height 0.5s ease; /* Transition for smooth effect */
-    margin-top: 5px; /* Space between title and content */
-    padding: 10px; /* Padding for content */
+    max-height: 500px;
+    overflow: auto;
+    transition: max-height 0.5s ease;
+    margin-top: 5px;
+    padding: 10px;
 }
 
-/* Card Hover Effect */
 .card:hover {
-    transform: scale(1.05); /* Scale up on hover */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+    transform: scale(1.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* Scrollable Content Animation on Hover */
 .card-body:hover .card-content {
-    animation: scroll 6s linear infinite; /* Apply scrolling animation */
-    max-height: 500px; /* Allow more height on hover for scrolling */
-    overflow-y: hidden; /* Prevent scroll bar from appearing */
+    animation: scroll 6s linear infinite;
+    max-height: 500px;
+    overflow-y: hidden;
 }
 
 @keyframes scroll {
@@ -61,20 +130,16 @@ body {
     }
 }
 
-/* Button Styles */
 .btn-primary {
     background-color: #007bff;
     border-color: #007bff;
     transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    position: relative; /* For positioning */
-    overflow: hidden; /* To hide overflow of ripple effect */
+    position: relative;
+    overflow: hidden;
 }
 
-/* Button Hover Effect */
 .btn-primary:hover {
     background-color: #0056b3;
-    transform: translateY(-2px); /* Raise the button slightly on hover */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
-
-/* Additional styles can go here */

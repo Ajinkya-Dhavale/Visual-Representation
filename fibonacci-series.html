@@ -22,7 +22,7 @@
               <div class="col-md-6">
                   <div class="form-group">
                       <label for="terms">Enter the number of terms:</label>
-                      <input type="number" class="form-control" id="terms" placeholder="Enter a number" min="2">
+                      <input type="number" class="form-control" id="terms" placeholder="Enter a number" min="2" value="10">
                   </div>
                   <button class="btn btn-primary btn-block mt-3" onclick="visualizeFibonacci()">Visualize Series</button>
               </div>
@@ -41,38 +41,7 @@
           </div>
       </div>
   
-      <script>
-          function visualizeFibonacci() {
-              const n = document.getElementById('terms').value;
-              const outputDiv = document.getElementById('output');
-              outputDiv.innerHTML = '';  // Clear previous output
-  
-              if (n <=1) {
-                  outputDiv.innerHTML = 'Please enter a number greater than 1.';
-                  return;
-              }
-  
-              let fib = [0, 1];
-              let i = 2;
-  
-              outputDiv.innerHTML += `<p class="fibonacci-step">0</p>`;
-              setTimeout(() => {
-                  outputDiv.innerHTML += `<p class="fibonacci-step">1</p>`;
-              }, 1000);
-  
-              function displayNextStep() {
-                  if (i < n) {
-                      fib[i] = fib[i - 1] + fib[i - 2];
-                      outputDiv.innerHTML += `<p class="fibonacci-step">${fib[i - 2]} + ${fib[i - 1]} = ${fib[i]}</p>`;
-                      i++;
-                      setTimeout(displayNextStep, 1000); 
-                  }
-              }
-  
-              setTimeout(displayNextStep, 2000);  
-          }
-      </script>
+      <script src="script.js"></script>
   
     </body>
   </html>
-  
