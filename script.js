@@ -24,8 +24,10 @@ function visualizeFibonacci() {
         i++;
         setTimeout(displayNextStep, 1000); 
       }
+      else{
+        outputDiv.innerHTML += `<p class="fibonacci-step">Fibonacci Series : ${fib.join(', ')}</p>`
+      }
     }
-  
     setTimeout(displayNextStep, 2000);  
   }
   
@@ -47,7 +49,7 @@ function visualizeFibonacci() {
     }, 1000);
   
     setTimeout(() => {
-      if (inputValue.toLoweCase() === reversedValue.toLowerCase()) {
+      if (inputValue === reversedValue) {
         outputDiv.innerHTML += `<p class="final-result is-palindrome">It's a Palindrome!</p>`;
       } else {
         outputDiv.innerHTML += `<p class="final-result not-palindrome">It's not a Palindrome.</p>`;
@@ -55,6 +57,8 @@ function visualizeFibonacci() {
     }, 2000);
   }
   
+
+
   // Function to generate matrices
   function generateMatrices() {
     // Get matrix dimensions from user input

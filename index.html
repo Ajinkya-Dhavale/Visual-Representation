@@ -5,9 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mathematical Visualizations</title>
-
-    <link rel="stylesheet" type="text/css" href="style.css">
-
     <!-- Bootstrap 5.0.2 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -21,42 +18,43 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
         crossorigin="anonymous"></script>
+
+        <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 
 <body>
+    <!--Main Navigation-->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid p-1">
+                <a class="navbar-brand text-danger " href="index.html">Visual Representation</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                    aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarText">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item ">
+                            <a class="nav-link text-white ms-4" href="fibonocci-series.html">Fibonocci Series</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white ms-4" href="palindrome.html">Palindrome Number</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white ms-4" href="matrix-multiplication.html">Matrix
+                                Multiplication</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white ms-4" href="strassen-matrix-multiplication.html">Strassen Matrix Multiplication</a>
+                        </li>
+                    </ul>
 
-     <!-- Navigation Bar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">Math Visuals</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">Home</a> <!-- Link to the homepage -->
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="fibonacci-series.html">Fibonacci Series</a> <!-- Redirect to Fibonacci page -->
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="palindrome.html">Palindrome</a> <!-- Redirect to Palindrome page -->
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="matrix-multiplication.html">Matrix Multiplication</a> <!-- Redirect to Matrix Multiplication page -->
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="strassen-matrix-multiplication.html">Strassen's Algorithm</a> <!-- Redirect to Strassen's Algorithm page -->
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
+                </div>
+            </div>
+        </nav>
+    </header>
 
-    
     <div class="container text-center mt-3">
         <h1 class="display-5">Mathematical Visualizations</h1>
         <p class="lead mb-4">Explore various mathematical concepts and algorithms</p>
@@ -69,18 +67,21 @@
             <div class="col-md-6 mb-4">
                 <div class="card h-100">
                     <div class="card-title text-center">
-                        Fibonacci Series <i class="fas fa-seedling"></i> 
+                        Fibonacci Series <i class="fas fa-seedling"></i>
                     </div>
                     <div class="card-body">
                         <div class="card-content">
                             <p class="card-text">
-                                The Fibonacci series is a sequence where each number is the sum of the two before it, starting from 0 and 1. The sequence looks like: 0, 1, 1, 2, 3, 5, 8, 13, ...
-                                It appears everywhere in nature, from the spirals of seashells to the petals of flowers, and even in art and architecture! It also plays a big role in computer algorithms and mathematics.
+                                The Fibonacci series is a sequence where each number is the sum of the two before it,
+                                starting from 0 and 1. The sequence looks like: 0, 1, 1, 2, 3, 5, 8, 13, ...
+                                It appears everywhere in nature, from the spirals of seashells to the petals of flowers,
+                                and even in art and architecture! It also plays a big role in computer algorithms and
+                                mathematics.
                             </p>
                         </div>
                     </div>
                     <div class="card-footer text-center">
-                        <a href="fibonacci-series.html" class="btn btn-primary">Let's See</a>
+                        <a href="fibonocci-series.html" class="btn btn-primary">Let's Learn</a>
                     </div>
                 </div>
             </div>
@@ -89,7 +90,7 @@
             <div class="col-md-6 mb-4">
                 <div class="card h-100">
                     <div class="card-title text-center">
-                        Palindrome <i class="fas fa-book"></i> 
+                        Palindrome <i class="fas fa-book"></i>
                     </div>
                     <div class="card-body">
                         <div class="card-content">
@@ -111,7 +112,7 @@
             <div class="col-md-6 mb-4">
                 <div class="card h-100">
                     <div class="card-title text-center">
-                        Matrix Multiplication <i class="fas fa-th"></i> 
+                        Matrix Multiplication <i class="fas fa-th"></i>
                     </div>
                     <div class="card-body">
                         <div class="card-content">
@@ -119,8 +120,10 @@
                                 Matrix multiplication produces a new matrix by combining two matrices.
                             </p>
                             <p><strong>Example:</strong> A (2x3) * B (3x2) = C (2x2)</p>
-                            <p>This operation follows specific rules, such as the number of columns in the first matrix must match the number of rows in the second.</p>
-                            <p>Matrix multiplication has applications in computer graphics, machine learning, and more.</p>
+                            <p>This operation follows specific rules, such as the number of columns in the first matrix
+                                must match the number of rows in the second.</p>
+                            <p>Matrix multiplication has applications in computer graphics, machine learning, and more.
+                            </p>
                         </div>
                     </div>
                     <div class="card-footer text-center">
@@ -133,7 +136,7 @@
             <div class="col-md-6 mb-4">
                 <div class="card h-100">
                     <div class="card-title text-center">
-                        Strassen's Matrix Multiplication <i class="fas fa-random"></i> 
+                        Strassen's Matrix Multiplication <i class="fas fa-random"></i>
                     </div>
                     <div class="card-body">
                         <div class="card-content">
@@ -141,8 +144,10 @@
                                 A more efficient method for matrix multiplication using fewer operations.
                             </p>
                             <p><strong>Efficiency:</strong> O(n^2.81) vs O(n^3)</p>
-                            <p>Strassen's method divides matrices into smaller submatrices, which reduces the number of multiplications needed.</p>
-                            <p>This algorithm is particularly useful for large matrices and is widely used in numerical computing.</p>
+                            <p>Strassen's method divides matrices into smaller submatrices, which reduces the number of
+                                multiplications needed.</p>
+                            <p>This algorithm is particularly useful for large matrices and is widely used in numerical
+                                computing.</p>
                         </div>
                     </div>
                     <div class="card-footer text-center">
