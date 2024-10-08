@@ -39,17 +39,19 @@ function visualizeFibonacci() {
       outputDiv.innerHTML = 'Please enter a valid string or number.';
       return;
     }
-  
-    const reversedValue = inputValue.split('').reverse().join('');
-  
-    outputDiv.innerHTML += `<p class="palindrome-step">Original: ${inputValue}</p>`;
+   // Convert to lowercase
+   let inputValue1 = inputValue.toLowerCase();
+
+   // Reverse the string
+   const reversedValue = inputValue1.split('').reverse().join('');
+    outputDiv.innerHTML += `<p class="palindrome-step">Original: ${inputValue1}</p>`;
     
     setTimeout(() => {
       outputDiv.innerHTML += `<p class="palindrome-step">Reversed: ${reversedValue}</p>`;
     }, 1000);
   
     setTimeout(() => {
-      if (inputValue === reversedValue) {
+      if (inputValue1 === reversedValue) {
         outputDiv.innerHTML += `<p class="final-result is-palindrome">It's a Palindrome!</p>`;
       } else {
         outputDiv.innerHTML += `<p class="final-result not-palindrome">It's not a Palindrome.</p>`;
