@@ -47,7 +47,7 @@ function visualizeFibonacci() {
     }, 1000);
   
     setTimeout(() => {
-      if (inputValue.toLoweCase() === reversedValue.toUpperCase()) {
+      if (inputValue.toLoweCase() === reversedValue.toLowerCase()) {
         outputDiv.innerHTML += `<p class="final-result is-palindrome">It's a Palindrome!</p>`;
       } else {
         outputDiv.innerHTML += `<p class="final-result not-palindrome">It's not a Palindrome.</p>`;
