@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,9 +12,39 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+   <!--Main Navigation-->
+   <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid p-1">
+            <a class="navbar-brand text-danger" href="index.html">Visual Representation</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item ">
+                        <a class="nav-link text-white ms-4" href="fibonocci-series.html">Fibonocci Series</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white ms-4" href="palindrome.html">Palindrome Number</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white ms-4" href="matrix-multiplication.html">Matrix
+                            Multiplication</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white ms-4" href="strassen-matrix-multiplication.html">Strassen Matrix Multiplication</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+</header>
 
   <div class="container text-center">
-      <h1 class="display-4">Palindrome Checker</h1>
+      <h1 class="display-5">Palindrome Checker</h1>
       <p class="lead">Check whether a string or number is a palindrome step by step</p>
   </div>
 
@@ -22,7 +53,7 @@
           <div class="col-md-6">
               <div class="form-group">
                   <label for="inputValue">Enter a String or Number:</label>
-                  <input type="text" class="form-control" id="inputValue" placeholder="Enter a string or number">
+                  <input type="text" class="form-control mt-1" id="inputValue" placeholder="Enter a string or number">
               </div>
               <button class="btn btn-primary btn-block mt-3" onclick="checkPalindrome()">Check Palindrome</button>
           </div>
@@ -37,29 +68,6 @@
       </div>
   </div>
 
-  <script>
-      function checkPalindrome() {
-          const inputValue = document.getElementById('inputValue').value;
-          const outputDiv = document.getElementById('output');
-          if (!inputValue) {
-              outputDiv.innerHTML = 'Please enter a valid string or number.';
-              return;
-          }
-
-          const reversedValue = inputValue.split('').reverse().join('');
-
-          outputDiv.innerHTML += `<p class="palindrome-step">Original: ${inputValue}</p>`;
-          
-          setTimeout(() => {
-              outputDiv.innerHTML += `<p class="palindrome-step">Reversed: ${reversedValue}</p>`;
-          }, 1000);
-
-          setTimeout(() => {
-              if (inputValue === reversedValue) {
-                  outputDiv.innerHTML += `<p class="final-result is-palindrome">It's a Palindrome!</p>`;
-              } else {
-                  outputDiv.innerHTML += `<p class="final-result not-palindrome">It's not a Palindrome.</p>`;
-              }
-          }, 2000);
-      }
-  </script>
+  <script src="script.js"></script>
+</body>
+</html>

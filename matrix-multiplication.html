@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,7 +18,42 @@
     }
   </style>
 </head>
-<h1 class="mt-3">Matrix Multiplication Visualizer (n x m) * (m x p)</h1>
+<body>
+  
+   <!--Main Navigation-->
+   <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid p-1">
+            <a class="navbar-brand text-danger" href="index.html">Visual Representation</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item ">
+                        <a class="nav-link text-white ms-4" href="fibonocci-series.html">Fibonocci Series</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white ms-4" href="palindrome.html">Palindrome Number</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white ms-4" href="matrix-multiplication.html">Matrix
+                            Multiplication</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white ms-4" href="strassen-matrix-multiplication.html">Strassen Matrix Multiplication</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+</header>
+  <div class="container text-center">
+        <h1 class="display-5 m-2">Matrix Multiplication (n x m) * (m x p)</h1>
+        <p class="lead">Multiply two matrices</p>
+      </div>
 
   <div class="container">
     <!-- Input for Matrix Dimensions -->
@@ -71,70 +107,6 @@
     </div>
   </div>
 
-  <script>
-    function generateMatrices() {
-      // Get matrix dimensions from user input
-      let n = parseInt(document.getElementById('n').value);
-      let m = parseInt(document.getElementById('m').value);
-      let p = parseInt(document.getElementById('p').value);
-
-      // Generate Matrix A (n x m)
-      let matrixA = document.getElementById('matrixA');
-      matrixA.innerHTML = '<h3>Matrix A (' + n + ' x ' + m + ')</h3>';
-      for (let i = 0; i < n; i++) {
-        for (let j = 0; j < m; j++) {
-          matrixA.innerHTML += `<input type="number" id="a${i}${j}" value="0">`;
-        }
-        matrixA.innerHTML += '<br>';
-      }
-
-      // Generate Matrix B (m x p)
-      let matrixB = document.getElementById('matrixB');
-      matrixB.innerHTML = '<h3>Matrix B (' + m + ' x ' + p + ')</h3>';
-      for (let i = 0; i < m; i++) {
-        for (let j = 0; j < p; j++) {
-          matrixB.innerHTML += `<input type="number" id="b${i}${j}" value="0">`;
-        }
-        matrixB.innerHTML += '<br>';
-      }
-    }
-
-    function multiplyMatrices() {
-      // Get matrix dimensions
-      let n = parseInt(document.getElementById('n').value);
-      let m = parseInt(document.getElementById('m').value);
-      let p = parseInt(document.getElementById('p').value);
-
-      // Initialize result matrix
-      let resultMatrix = document.getElementById('resultMatrix');
-      resultMatrix.innerHTML = '<h3>Result Matrix (' + n + ' x ' + p + ')</h3>';
-
-      // Create empty result matrix
-      let result = [];
-      for (let i = 0; i < n; i++) {
-        result[i] = [];
-        for (let j = 0; j < p; j++) {
-          result[i][j] = 0;
-        }
-      }
-
-      // Multiply Matrix A and Matrix B
-      for (let i = 0; i < n; i++) {
-        for (let j = 0; j < p; j++) {
-          for (let k = 0; k < m; k++) {
-            result[i][j] += parseFloat(document.getElementById(`a${i}${k}`).value) * parseFloat(document.getElementById(`b${k}${j}`).value);
-          }
-        }
-      }
-
-      // Display result matrix
-      for (let i = 0; i < n; i++) {
-        for (let j = 0; j < p; j++) {
-          resultMatrix.innerHTML += `<input type="number" value="${result[i][j]}" disabled>`;
-        }
-        resultMatrix.innerHTML += '<br>';
-      }
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
