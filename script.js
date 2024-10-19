@@ -35,6 +35,7 @@ function visualizeFibonacci() {
   function checkPalindrome() {
     const inputValue = document.getElementById('inputValue').value;
     const outputDiv = document.getElementById('output');
+    outputDiv.innerHTML="";
     if (!inputValue) {
       outputDiv.innerHTML = 'Please enter a valid string or number.';
       return;
@@ -52,9 +53,9 @@ function visualizeFibonacci() {
   
     setTimeout(() => {
       if (inputValue1 === reversedValue) {
-        outputDiv.innerHTML += `<p class="final-result is-palindrome">It's a Palindrome!</p>`;
+        outputDiv.innerHTML += `<p class="final-result text-success">It's a Palindrome!</p>`;
       } else {
-        outputDiv.innerHTML += `<p class="final-result not-palindrome">It's not a Palindrome.</p>`;
+        outputDiv.innerHTML += `<p class="final-result text-danger">It's not a Palindrome.</p>`;
       }
     }, 2000);
   }
@@ -112,8 +113,11 @@ function visualizeFibonacci() {
     // Multiply Matrix A and Matrix B
     for (let i = 0; i < n; i++) {
       for (let j = 0; j < p; j++) {
+        result[i][j]=0;
         for (let k = 0; k < m; k++) {
-          result[i][j] += parseFloat(document.getElementById(`a${i}${k}`).value) * parseFloat(document.getElementById(`b${k}${j}`).value);
+          let a=parseFloat(document.getElementById(`a${i}${k}`).value);
+          let b=parseFloat(document.getElementById(`b${k}${j}`).value);
+          result[i][j] += a * b;
         }
       }
     }

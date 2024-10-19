@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual Representation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+
+    <!-- External Style Sheet -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+    <!--Main Navigation-->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid p-1">
+                <a class="navbar-brand text-danger" href="index.html">Visual Representation</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                    aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarText">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item ">
+                            <a class="nav-link text-white ms-4" href="fibonacci-series.html">Fibonocci Series</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white ms-4" href="palindrome.html">Palindrome Number</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white ms-4" href="matrix-multiplication.html">Matrix
+                                Multiplication</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white ms-4" href="strassen-matrix-multiplication.html">Strassen
+                                Matrix Multiplication</a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container text-center">
+        <h1 class="display-5 m-2">Matrix Multiplication (n x m) * (m x p)</h1>
+        <p class="lead">Multiply two matrices</p>
+    </div>
+
+    <div class="container">
+        <!-- Input for Matrix Dimensions -->
+        <div class="row mb-4">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="n">Enter Rows (n) of Matrix A:</label>
+                    <input type="number" id="n" value="2" class="form-control">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="m">Enter Columns (m) of Matrix A / Rows of Matrix B:</label>
+                    <input type="number" id="m" value="2" class="form-control">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="p">Enter Columns (p) of Matrix B:</label>
+                    <input type="number" id="p" value="2" class="form-control">
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mb-4">
+            <button class="btn btn-primary" onclick="generateMatrices()">Generate Matrices</button>
+        </div>
+
+        <div class="row text-center">
+            <div id="matrixA" class="col-md-6 matrix">
+                <h3>Matrix A</h3>
+            </div>
+            <div id="matrixB" class="col-md-6 matrix">
+                <h3>Matrix B</h3>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col text-center">
+              <button class="btn btn-success" onclick="multiplyMatrices()">Multiply Matrices</button>
+            </div>
+          </div>
+
+
+
+        <script>
+            function generateMatrices() {
+                let n = parseInt(document.getElementById('n').value);
+                let m = parseInt(document.getElementById('m').value);
+                let p = parseInt(document.getElementById('p').value);
+
+                let matrixA = document.getElementById("matrixA");
+                matrixA.innerHTML = '<h3>Matrix A (' + n + ' x ' + m + ')</h3>';
+                for (i = 0; i < n; i++) {
+                    for (j = 0; j < m; j++) {
+                        matrixA.innerHTML += `<input type="number" id="a${i}${j}" value="0">`;
+                    }
+                    matrixA.innerHTML+="<br>";
+                }
+                let matrixB = document.getElementById("matrixB");
+                matrixB.innerHTML = '<h3>Matrix B (' + m + ' x ' + p + ')</h3>';
+                for (i = 0; i < m; i++) {
+                    for (j = 0; j < p; j++) {
+                        matrixB.innerHTML += `<input type="number" id="a${i}${j}" value="0">`;
+                    }
+                    matrixB.innerHTML+="<br>";
+                }
+            }
+        </script>
+</body>
+
+</html>

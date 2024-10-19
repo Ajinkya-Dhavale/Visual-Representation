@@ -1,71 +1,16 @@
-
-/* Fibbonocci Series */
-.container {
-    margin-top: 50px;
-}
-.fibonacci-output {
-    font-size: 1.25rem;
-    background-color: white;
-    border-radius: 5px;
-    margin-top: 10px;
-    padding: 15px;
-    border: 1px solid rgb(211, 202, 202);
-}
-.fibonacci-step {
-    font-size: 1.5rem;
-    color: #007bff;
+ /* Prathmesh css */
+/* Global Resets */
+* {
+    margin: 0px;
+    padding: 0px;
 }
 
-/* Palimdrome */
-.output-box {
-    font-size: 1.25rem;
-    background-color:white;
-    border-radius: 5px;
-    margin-top: 10px;
-    padding: 15px;
-    border: 1px solid rgb(211, 202, 202);
-}
-.palindrome-step {
-    font-size: 1.5rem;
-    color: #007bff;
-}
-.final-result {
-    font-size: 1.75rem;
-    margin-top: 15px;
-}
-.is-palindrome {
-    color: #28a745;
-}
-.not-palindrome {
-    color: #dc3545;
+body {
+    background-color: rgb(247, 235, 220);
 }
 
-/* Matrix Multiplication */
-.matrix-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-  }
-
-  .matrix input {
-    width: 50px;
-    height: 50px;
-    text-align: center;
-    font-size: 18px;
-    margin: 5px;
-  }
-  .result-matrix {
-    text-align: center;
-    padding: 15px;
-    border-radius: 8px;
-  }
-  .result-matrix input{
-    background-color: white;
-  }
-
-  /* Prathmesh css */
-/* Navbar Css */
-  .navbar-brand {
+ /* Navbar Css */
+.navbar-brand {
     font-size: 1.5rem;
     font-weight: bold;
     transition: transform 0.2s ease;
@@ -102,16 +47,6 @@
         text-align: center;
         margin-top: 10px;
     }
-}
-
-/* Global Resets */
-* {
-    margin: 0px;
-    padding: 0px;
-}
-
-body {
-    background-color: rgb(247, 235, 220);
 }
 
 /* Card Styles */
@@ -152,7 +87,7 @@ body {
     overflow: auto;
     transition: max-height 0.5s ease;
     margin-top: 5px;
-    padding: 0px 10px 0px 10px;
+    padding: 10px;
 }
 
 .card:hover {
@@ -183,8 +118,64 @@ body {
     overflow: hidden;
 }
 
-.btn-primary:hover {
-    background-color: #0056b3;
+.btn-primary:hover , .btn-success:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
+
+
+
+
+/* Fibbonocci Series */
+/* .container {
+    margin-top: 50px;
+} */
+.fibonacci-output {
+    background-color: white;
+    border-radius: 5px;
+    margin-top: 10px;
+    padding: 15px;
+    border: 1px solid rgb(211, 202, 202);
+}
+.fibonacci-step {
+    font-size: 1.5rem;
+    color: #007bff;
+}
+
+
+
+/* Palimdrome */
+.output-box {
+    background-color:white;
+    border-radius: 5px;
+    margin-top: 10px;
+    padding: 15px;
+    border: 1px solid rgb(211, 202, 202);
+}
+.palindrome-step {
+    font-size: 1.5rem;
+    color: #007bff;
+}
+.final-result {
+    font-size: 1.75rem;
+    margin-top: 15px;
+}
+
+/* Matrix Multiplication */
+  .matrix input {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    font-size: 18px;
+    margin: 5px;
+  }
+  .result-matrix {
+    text-align: center;
+    padding: 15px;
+    border-radius: 8px;
+  }
+  .result-matrix input{
+    background-color: white;
+  }
+
+ 
