@@ -138,7 +138,10 @@ body {
     border: 1px solid rgb(211, 202, 202);
 }
 .fibonacci-step {
-    font-size: 1.5rem;
+    font-size: 1.0rem;
+    padding: 5px 10px;
+    margin: 5px;
+    border: 0px;
     color: #007bff;
 }
 
@@ -178,4 +181,10 @@ body {
     background-color: white;
   }
 
- 
+  .highlight {
+    background-color: cyan;
+    animation: blink 0.5s step-start infinite;
+  }
+  @keyframes blink {
+    50% { opacity: 0.5; }
+  }

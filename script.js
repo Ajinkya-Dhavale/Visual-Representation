@@ -12,20 +12,20 @@ function visualizeFibonacci() {
     let fib = [0, 1];
     let i = 2;
   
-    outputDiv.innerHTML += `<p class="fibonacci-step">0</p>`;
+    outputDiv.innerHTML += `<button class="fibonacci-step">0</button>`;
     setTimeout(() => {
-      outputDiv.innerHTML += `<p class="fibonacci-step">1</p>`;
+      outputDiv.innerHTML += `<button class="fibonacci-step">1</button>`;
     }, 1000);
   
     function displayNextStep() {
       if (i < n) {
         fib[i] = fib[i - 1] + fib[i - 2];
-        outputDiv.innerHTML += `<p class="fibonacci-step">${fib[i - 2]} + ${fib[i - 1]} = ${fib[i]}</p>`;
+        outputDiv.innerHTML += `<button class="fibonacci-step">${fib[i - 2]} + ${fib[i - 1]} = ${fib[i]}</button>`;
         i++;
         setTimeout(displayNextStep, 1000); 
       }
       else{
-        outputDiv.innerHTML += `<p class="fibonacci-step">Fibonacci Series : ${fib.join(', ')}</p>`
+        outputDiv.innerHTML += `<button class="fibonacci-step">Fibonacci Series : ${fib.join(', ')}</button>`
       }
     }
     setTimeout(displayNextStep, 2000);  

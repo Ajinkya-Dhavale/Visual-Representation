@@ -7,15 +7,19 @@
   <title>Visual Representation</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
-    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
-    integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
-    crossorigin="anonymous"></script>
-
-  <!-- External Style Sheet -->
-  <link rel="stylesheet" href="style.css">
+  <style>
+    .highlight {
+      background-color: yellow;
+    }
+    .matrix input{
+      width: 50px;
+    height: 50px;
+    text-align: center;
+    font-size: 18px;
+    margin: 5px;
+    border-radius: 10px;
+    }
+  </style>
 </head>
 
 <body>
@@ -32,32 +36,30 @@
         <div class="collapse navbar-collapse" id="navbarText">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item ">
-              <a class="nav-link text-white ms-4" href="fibonacci-series.html">Fibonocci Series</a>
+              <a class="nav-link text-white ms-4" href="fibonacci-series.html">Fibonacci Series</a>
             </li>
             <li class="nav-item">
               <a class="nav-link text-white ms-4" href="palindrome.html">Palindrome Number</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white ms-4" href="matrix-multiplication.html">Matrix
-                Multiplication</a>
+              <a class="nav-link text-white ms-4" href="matrix-multiplication.html">Matrix Multiplication</a>
             </li>
             <li class="nav-item">
               <a class="nav-link text-white ms-4" href="strassen-matrix-multiplication.html">Strassen Matrix
                 Multiplication</a>
             </li>
           </ul>
-
         </div>
       </div>
     </nav>
   </header>
+
   <div class="container text-center">
     <h1 class="display-5 m-2">Matrix Multiplication (n x m) * (m x p)</h1>
     <p class="lead">Multiply two matrices</p>
   </div>
 
   <div class="container">
-    <!-- Input for Matrix Dimensions -->
     <div class="row mb-4">
       <div class="col-md-4">
         <div class="form-group">
@@ -82,31 +84,87 @@
     <div class="text-center mb-4">
       <button class="btn btn-primary" onclick="generateMatrices()">Generate Matrices</button>
     </div>
-    
 
-  <div class="row text-center">
-    <div id="matrixA" class="col-md-6 matrix">
-      <h3>Matrix A</h3>
+    <div class="row text-center">
+      <div id="matrixA" class="col-md-6 matrix">
+        <h3>Matrix A</h3>
+      </div>
+      <div id="matrixB" class="col-md-6 matrix">
+        <h3>Matrix B</h3>
+      </div>
     </div>
-    <div id="matrixB" class="col-md-6 matrix">
-      <h3>Matrix B</h3>
+
+    <div class="row mt-4">
+      <div class="col text-center">
+        <button class="btn btn-success" onclick="multiplyMatrices()">Multiply Matrices</button>
+      </div>
+    </div>
+
+    <div class="row mt-4 text-center">
+      <div id="resultMatrix" class="col-md-12 matrix result-matrix">
+        <h3>Result Matrix</h3>
+      </div>
     </div>
   </div>
 
-  <div class="row mt-4">
-    <div class="col text-center">
-      <button class="btn btn-success" onclick="multiplyMatrices()">Multiply Matrices</button>
-    </div>
-  </div>
+  <script>
+    function generateMatrices() {
+      let n = parseInt(document.getElementById('n').value);
+      let m = parseInt(document.getElementById('m').value);
+      let p = parseInt(document.getElementById('p').value);
 
-  <div class="row mt-4">
-    <div id="resultMatrix" class="col-md-12 matrix result-matrix">
-      <h3>Result Matrix</h3>
-    </div>
-  </div>
-  </div>
+      let matrixA = document.getElementById('matrixA');
+      matrixA.innerHTML = '<h3>Matrix A (' + n + ' x ' + m + ')</h3>';
+      for (let i = 0; i < n; i++) {
+        for (let j = 0; j < m; j++) {
+          matrixA.innerHTML += `<input type="number" id="a${i}${j}" value="0">`;
+        }
+        matrixA.innerHTML += '<br>';
+      }
 
-  <script src="script.js"></script>
+      let matrixB = document.getElementById('matrixB');
+      matrixB.innerHTML = '<h3>Matrix B (' + m + ' x ' + p + ')</h3>';
+      for (let i = 0; i < m; i++) {
+        for (let j = 0; j < p; j++) {
+          matrixB.innerHTML += `<input type="number" id="b${i}${j}" value="0">`;
+        }
+        matrixB.innerHTML += '<br>';
+      }
+    }
+
+    async function multiplyMatrices() {
+      let n = parseInt(document.getElementById('n').value);
+      let m = parseInt(document.getElementById('m').value);
+      let p = parseInt(document.getElementById('p').value);
+
+      let resultMatrix = document.getElementById('resultMatrix');
+      resultMatrix.innerHTML = '<h3>Result Matrix (' + n + ' x ' + p + ')</h3>';
+      let result = Array.from({ length: n }, () => Array(p).fill(0));
+
+      for (let i = 0; i < n; i++) {
+        for (let j = 0; j < p; j++) {
+          result[i][j] = 0;
+          for (let k = 0; k < m; k++) {
+            let aElement = document.getElementById(`a${i}${k}`);
+            let bElement = document.getElementById(`b${k}${j}`);
+            let a = parseFloat(aElement.value);
+            let b = parseFloat(bElement.value);
+
+            aElement.classList.add('highlight');
+            bElement.classList.add('highlight');
+            result[i][j] += a * b;
+            await new Promise(r => setTimeout(r, 700));
+
+            aElement.classList.remove('highlight');
+            bElement.classList.remove('highlight');
+          }
+          resultMatrix.innerHTML += `<input type="number" value="${result[i][j]}" readonly> `;
+        }
+        resultMatrix.innerHTML += '<br>';
+      }
+    }
+  </script>
+
 </body>
 
 </html>
