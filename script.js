@@ -1,36 +1,39 @@
 // Function to visualize Fibonacci series
 function visualizeFibonacci() {
-    const n = document.getElementById('terms').value;
-    const outputDiv = document.getElementById('output');
-    outputDiv.innerHTML = '';  // Clear previous output
-  
-    if (n <=1) {
+  const n = document.getElementById('terms').value;
+  const outputDiv = document.getElementById('output');
+  outputDiv.innerHTML = '';  // Clear previous output
+
+  if (n <= 1) {
       outputDiv.innerHTML = 'Please enter a number greater than 1.';
       return;
-    }
-  
-    let fib = [0, 1];
-    let i = 2;
-  
-    outputDiv.innerHTML += `<button class="fibonacci-step">0</button>`;
-    setTimeout(() => {
+  }
+
+  let fib = [0, 1];
+  let i = 2;
+
+  outputDiv.innerHTML += `<button class="fibonacci-step">0</button>`;
+  setTimeout(() => {
       outputDiv.innerHTML += `<button class="fibonacci-step">1</button>`;
-    }, 1000);
-  
-    function displayNextStep() {
+      outputDiv.scrollTop = outputDiv.scrollHeight;  // Auto-scroll to the latest element
+  }, 1000);
+
+  function displayNextStep() {
       if (i < n) {
-        fib[i] = fib[i - 1] + fib[i - 2];
-        outputDiv.innerHTML += `<button class="fibonacci-step">${fib[i - 2]} + ${fib[i - 1]} = ${fib[i]}</button>`;
-        i++;
-        setTimeout(displayNextStep, 1000); 
+          fib[i] = fib[i - 1] + fib[i - 2];
+          outputDiv.innerHTML += `<button class="fibonacci-step">${fib[i - 2]} + ${fib[i - 1]} = ${fib[i]}</button>`;
+          i++;
+          outputDiv.scrollTop = outputDiv.scrollHeight;  // Auto-scroll to the latest element
+          setTimeout(displayNextStep, 500); 
+      } else {
+          outputDiv.innerHTML += `<button class="fibonacci-step">Fibonacci Series : ${fib.join(', ')}</button>`;
+          outputDiv.scrollTop = outputDiv.scrollHeight;  // Auto-scroll to the final element
       }
-      else{
-        outputDiv.innerHTML += `<button class="fibonacci-step">Fibonacci Series : ${fib.join(', ')}</button>`
-      }
-    }
-    setTimeout(displayNextStep, 2000);  
   }
   
+  setTimeout(displayNextStep, 2000); 
+}
+
   // Function to check palindrome
   function checkPalindrome() {
     const inputValue = document.getElementById('inputValue').value;

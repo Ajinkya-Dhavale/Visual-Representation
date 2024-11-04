@@ -140,11 +140,10 @@ body {
     border-radius: 5px;
     margin-top: 10px;
     padding: 15px;
-    /* max-width: 400px; */
     max-height: 220px;
-    overflow-y: auto;
-    /* overscroll-behavior: inherit; */
+    overflow-y: auto; /* Enables vertical scrollbar */
     border: 1px solid rgb(211, 202, 202);
+    scroll-behavior: smooth;
 }
 .fibonacci-step {
     font-size: 1.0rem;
