@@ -6,14 +6,18 @@
 }
 
 body {
-    background-color: rgb(247, 235, 220);
+    /* background-color: rgb(247, 235, 220); */
+    background-color: rgb(236, 234, 234) !important;
 }
 
  /* Navbar Css */
 .navbar-brand {
     font-size: 1.5rem;
     font-weight: bold;
-    transition: transform 0.2s ease;
+    transition: transform 0.2s ease;    
+}
+.navbar-brand{
+    color: rgba(230, 57, 178, 0.993) !important;
 }
 
 .navbar-brand:hover {
@@ -31,7 +35,7 @@ body {
 
 .nav-link:hover,
 .nav-link:focus {
-    background-color: #0056b3;
+    background-color: rgba(189, 42, 145, 0.993);
     color: white;
     transition: background-color 0.2s ease;
 }
@@ -59,7 +63,7 @@ body {
 }
 
 .card-title {
-    background-color: #007bff;
+    background-color: rgba(189, 42, 145, 0.993);
     color: white;
     padding: 10px;
     border-radius: 5px 5px 0 0;
@@ -110,15 +114,16 @@ body {
     }
 }
 
-.btn-primary {
-    background-color: #007bff;
-    border-color: #007bff;
+.btn-primary, .btn-success {
+    background-color: rgba(173, 30, 130, 0.993) !important;
+    border-color: #00070e;
     transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
     overflow: hidden;
 }
 
 .btn-primary:hover , .btn-success:hover {
+    background-color: rgba(173, 30, 130, 0.993);
     transform: translateY(-2px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
@@ -135,6 +140,10 @@ body {
     border-radius: 5px;
     margin-top: 10px;
     padding: 15px;
+    /* max-width: 400px; */
+    max-height: 220px;
+    overflow-y: auto;
+    /* overscroll-behavior: inherit; */
     border: 1px solid rgb(211, 202, 202);
 }
 .fibonacci-step {
@@ -181,8 +190,17 @@ body {
     background-color: white;
   }
 
+  .matrix input {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    font-size: 18px;
+    margin: 5px;
+    border-radius: 10px;
+  }
+
   .highlight {
-    background-color: cyan;
+    background-color: rgba(230, 57, 178, 0.993);
     animation: blink 0.5s step-start infinite;
   }
   @keyframes blink {
